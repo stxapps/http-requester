@@ -1,0 +1,11 @@
+{
+  "name": "http-requester",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "live-server --ignore=node_modules,.git --no-browser"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
