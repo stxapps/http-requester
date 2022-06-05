@@ -1,4 +1,4 @@
-const url = 'http://localhost:8088/';
+const url = 'http://localhost:8088/'; //'https://iap-001.uc.r.appspot.com/';
 
 const postVerify = async () => {
   const verifyUrl = url + 'verify';
@@ -19,7 +19,7 @@ const postVerify = async () => {
 
 const postNotify = async (notifyPath) => {
   const notifyUrl = url + notifyPath;
-  const data = notifyReq3;
+  const data = notifyReq1;
 
   const response = await fetch(notifyUrl, {
     method: 'POST',
@@ -53,8 +53,8 @@ const postStatus = async () => {
 
 const main = () => {
   //postVerify();
-  //postNotify('appstore/notify');
   //postNotify('playstore/notify');
-  postStatus();
+  //postNotify('appstore/notify');
+  //postStatus();
 }
 main();
