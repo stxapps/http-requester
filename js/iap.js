@@ -1,9 +1,9 @@
 const url = 'http://localhost:8088/'; //'https://iap-001.uc.r.appspot.com/';
-//const url = 'https://20230321t122323-dot-iap-001.uc.r.appspot.com/';
+//const url = 'https://20230322t144535-dot-iap-001.uc.r.appspot.com/';
 
 const postVerify = async () => {
   const verifyUrl = url + 'verify';
-  const data = verifyReq4;
+  const data = verifyReq3;
 
   const response = await fetch(verifyUrl, {
     method: 'POST',
@@ -37,7 +37,7 @@ const postNotify = async (notifyPath) => {
 
 const postStatus = async () => {
   const statusUrl = url + 'status';
-  const data = statusReq3;
+  const data = statusReq4;
 
   const response = await fetch(statusUrl, {
     method: 'POST',
