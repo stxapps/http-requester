@@ -40,6 +40,7 @@ const listFiles = async (url, address, bearer) => {
     body: JSON.stringify({
       page: null,
       //page: 'CiwxSk5zSzY0Z3BGYzYzYTNSVnJ3R1hlYlhaUnhvMnpKVUxuL3Rlc3QzLnR4dA==',
+      //pageSize: 1,
       stat: false, //true
     }),
   });
