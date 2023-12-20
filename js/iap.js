@@ -1,9 +1,10 @@
-const url = 'http://localhost:8088/'; //'https://iap-001.uc.r.appspot.com/';
-//const url = 'https://20230322t144535-dot-iap-001.uc.r.appspot.com/';
+//const url = 'http://localhost:8088/'; //'https://iap-001.uc.r.appspot.com/';
+const url = 'https://20231220t171721-dot-iap-001.uc.r.appspot.com/';
+//const url = 'https://iap-001.uc.r.appspot.com/';
 
 const postVerify = async () => {
   const verifyUrl = url + 'verify';
-  const data = verifyReq3;
+  const data = verifyReq15;
 
   const response = await fetch(verifyUrl, {
     method: 'POST',
@@ -20,7 +21,7 @@ const postVerify = async () => {
 
 const postNotify = async (notifyPath) => {
   const notifyUrl = url + notifyPath;
-  const data = notifyReq8;
+  const data = notifyReq9;
 
   const response = await fetch(notifyUrl, {
     method: 'POST',
@@ -37,7 +38,7 @@ const postNotify = async (notifyPath) => {
 
 const postStatus = async () => {
   const statusUrl = url + 'status';
-  const data = statusReq4;
+  const data = statusReq7;
 
   const response = await fetch(statusUrl, {
     method: 'POST',
@@ -77,7 +78,7 @@ const main = () => {
   //postNotify('playstore/notify');
   //postNotify('appstore/notify');
   //postNotify('paddle/notify');
-  postStatus();
-  //postPaddlePre();
+  //postStatus();
+  postPaddlePre();
 }
 main();
