@@ -1,6 +1,4 @@
-//const url = 'http://localhost:8088/'; //'https://iap-001.uc.r.appspot.com/';
-const url = 'https://20231220t171721-dot-iap-001.uc.r.appspot.com/';
-//const url = 'https://iap-001.uc.r.appspot.com/';
+const url = 'http://localhost:8088/';
 
 const postVerify = async () => {
   const verifyUrl = url + 'verify';
@@ -21,7 +19,7 @@ const postVerify = async () => {
 
 const postNotify = async (notifyPath) => {
   const notifyUrl = url + notifyPath;
-  const data = notifyReq9;
+  const data = notifyReq11;
 
   const response = await fetch(notifyUrl, {
     method: 'POST',
@@ -56,8 +54,8 @@ const postStatus = async () => {
 const postPaddlePre = async () => {
   const preUrl = url + 'paddle/pre';
   const data = {
-    userId: '02d4bcea7320a06c04026de2e063e7356bf46c54b34a691b839c3da53a60553fb9',
-    randomId: '37bn-RW4G-oTUm-e4ni',
+    userId: '',
+    randomId: '',
   };
 
   const response = await fetch(preUrl, {
@@ -77,8 +75,8 @@ const main = () => {
   //postVerify();
   //postNotify('playstore/notify');
   //postNotify('appstore/notify');
-  //postNotify('paddle/notify');
+  postNotify('paddle/notify');
   //postStatus();
-  postPaddlePre();
+  //postPaddlePre();
 }
 main();

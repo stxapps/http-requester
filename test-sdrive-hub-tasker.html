@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico">
+  <title>Stacks Drive - Tasker tests</title>
+</head>
+<body>
+  <h1>Fetch script</h1>
+
+  <script>
+
+    async function postData(url = '', data = {}) {
+      const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        referrerPolicy: 'strict-origin',
+        body: JSON.stringify(data)
+      });
+      return response;
+    }
+
+    var url = 'http://localhost:8088/run';
+    var data = {
+      backupPaths: [],
+      fileLogs: [
+        { path: 'foo/bar/test.json', assoIssAddress:null, action: 'putFile', size: 242, sizeChange: 242, createDT: 1708236641141 },
+        { path: 'blabla/test.json', assoIssAddress: '0xc22b', action: 'deleteFile', size: 0, sizeChange: -242, createDT: 1708236620030 },
+        { path: undefined, assoIssAddress: '0xc22b', action: 'bla', size: 0, sizeChange: null, createDT: null},
+      ],
+    };
+    postData(url, data)
+      .then(response => {
+        console.log(response.status);
+      }
+    );
+  </script>
+</body>
+</html>

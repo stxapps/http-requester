@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico">
+  <title>AugurRank</title>
+</head>
+<body>
+  <h1>Fetch script</h1>
+
+  <script>
+
+    async function postData(url = '', data = {}) {
+      const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        referrerPolicy: 'strict-origin',
+        body: JSON.stringify(data)
+      });
+      return response.json();
+    }
+
+    var url = 'http://localhost:8088/add-newsletter-email';
+    var data = {
+      //email: '',
+      //email: 'blabla',
+      //email: 'a@a.a',
+      email: 'b@b.b',
+    };
+    postData(url, data)
+      .then(response => {
+        console.log(response);
+      }
+    );
+  </script>
+</body>
+</html>
