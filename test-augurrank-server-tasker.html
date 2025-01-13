@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico">
+  <title>AugurRank</title>
+</head>
+<body>
+  <h1>Fetch script</h1>
+
+  <script>
+
+    async function postData(url = '', data = {}) {
+      const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        referrerPolicy: 'strict-origin',
+        body: JSON.stringify(data),
+      });
+      return response;
+    }
+
+    async function main() {
+      var url = 'http://localhost:8088/run';
+      var data = {
+        oldUser: null,
+        newUser: { appBtcAddr: 'abcdefg' },
+        //newUser: { appBtcAddr: 'qwert' },
+        /*oldPred: {
+          id: 7, game: 'GameBtc', contract: 'augurrank-btc-v2', value: 'up',
+          createDate: 8, updateDate: 9, stxAddr: 'ST2',
+          cTxId: 'cTxId', pStatus: 'success',
+        },
+        newPred: {
+          id: 7, game: 'GameBtc', contract: 'augurrank-btc-v2', value: 'up',
+          createDate: 8, updateDate: 10, stxAddr: 'ST2',
+          cTxId: 'cTxId', pStatus: 'success', cStatus: 'success', anchorHeight: 123456,
+          anchorBurnHeight: 877990, seq: 2, targetBurnHeight: 878090,
+        },*/
+        oldPred: {
+          id: 8, game: 'GameBtc', contract: 'augurrank-btc-v2', value: 'up',
+          createDate: 96400000, updateDate: 96400000, stxAddr: 'ST2',
+          cTxId: 'cTxId', pStatus: 'success',
+        },
+        newPred: {
+          id: 8, game: 'GameBtc', contract: 'augurrank-btc-v2', value: 'up',
+          createDate: 96400000, updateDate: 96404000, stxAddr: 'ST2',
+          cTxId: 'cTxId', pStatus: 'success', cStatus: 'success', anchorHeight: 123456,
+          anchorBurnHeight: 877990, seq: 3, targetBurnHeight: 878090,
+        },
+      };
+
+      const res = await postData(url, data);
+      try {
+        const obj = await res.json();
+        console.log(obj);
+      } catch(error) {
+        console.log(res);
+      }
+    }
+    main();
+  </script>
+</body>
+</html>
