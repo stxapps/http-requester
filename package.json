@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "main": "src/index.js",
   "scripts": {
-    "serve": "live-server --ignore=node_modules,.git --no-browser"
+    "serve": "five-server --ignore=node_modules,.git --no-browser"
   },
   "dependencies": {
-    "live-server": "^1.2.1"
+    "five-server": "^0.4.5"
   }
 }
